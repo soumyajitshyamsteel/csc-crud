@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "cb46a468-400b-47bf-9bff-ead19f280889",
+		"name": "CSC-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24302594"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tester@gmail.com\",\r\n    \"password\": \"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "list of location(countries or state or cities)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": \"countries\" //string|required|values available in(countries / states / cities)\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get country details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get state details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get city details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\" : \"city\",\r\n    \"city_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/get-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get city by country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"country_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/get-cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get-cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country_name\":\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add country",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"country\",\r\n    \"name\": \"test country\",\r\n    \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add state",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"country\",\r\n    \"name\": \"test country\",\r\n    \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/add-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"country\",\r\n    \"country_id\" : 250,\r\n    \"country_name\": \"testttttt country\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/edit-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"edit-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit state",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"state\",\r\n    \"state_id\" : 4861,\r\n    \"state_name\": \"testttttt state\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/edit-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"edit-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"city\",\r\n    \"city_id\" : 143782,\r\n    \"city_name\": \"testttttt city\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/edit-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"edit-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"city\",\r\n    \"city_id\" : 143782\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/delete-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete state",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"state\",\r\n    \"state_id\" : 4861\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/delete-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDQwODNmNDdlNzI0ZTBlMjdiMTY0N2I0YmM1MGY3NmI1Zjk1MTM1MTU4YzY0NzhmMjc0NzkwZjk1MDIxZmE1OTlhZTRmMTcwN2M1M2I4OGEiLCJpYXQiOjE2ODAwODE5MzQuMDA2NjYzLCJuYmYiOjE2ODAwODE5MzQuMDA2NjY1LCJleHAiOjE2OTU5Nzk1MzMuOTA0NDM5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ld50xhbiOB-SPRHxFV4h31b4766wFrFaHf8k4acuhNxl4vyZM5Ftp2y3adOXl_JLVVZrV4ZnTgQ35mBB0N0nd9NKCE-FHiWT1ujtRM5ThdwnOAEUlkMMF7qCn93Nh7u6PpfFKLtm3V4el7DJiOsfgJkKtYF4jbjma6aDGfgsM7Fs8tkgJveD4ZYwJLNOTjBpI0iRlXDPs6BRgt02tktRyRf_Wl8RUy2lhhxBs2kHusrv2YpocM5gDGqUGK0PhwYnXiW5KSh3vZWh7We7VDTU_mKLHpKE66AP2newCZ-xCoBxd9xTK4PzYjEKHsFekM6BeRp9PXtcBBJt3bHLIwCRBcfB90oFNLgDRhaacdqVBSPP5o1e_3qNEiEwZQtzQtHRvOqJQZBK5iiAycyrfrLVo5QkaM7e8KxYrHEBKefFUgsNwUvYc_HukduXjqc-jbaQZnnjaXbJpqrkmv4v85xQ7OEMgR11ABFSN6Xby9tgJL81jOo96alktMOSzQmb9SIFyauBcw5e6xcowRrEy0p-1njZEpMdSpAba_i6FcRmKan7pQRzQ3F6BJENIN4AbFrjHWH7nvMYtYy_vPQDs1u_rE65Tw9S_qr9xeH-RbhmLZ9fElmh5FTjTmCD7pKxd1I218bAfAGjLFot4oTGkg4FQY1wgCLFRF5za3JWclL9A0o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"country\",\r\n    \"country_id\" : 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/delete-location",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-location"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}

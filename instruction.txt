@@ -1,0 +1,10 @@
+copy .env.example to .env
+
+
+Run commands:
+
+1)composer update
+
+2)php artisan migrate:fresh --seed
+
+3)php artisan passport:install
