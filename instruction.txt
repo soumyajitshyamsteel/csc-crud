@@ -12,3 +12,22 @@ Run commands:
 2)php artisan migrate:fresh --seed
 
 3)php artisan passport:install
+
+
+
+if need to use the dummy data for cities you need to separately import the sql file using terminal
+
+the file is located in database/sql folder
+
+
+if the system has windows
+
+
+go to bin folder of xampp/mysql
+
+
+paste the sql over there and run cmd on that folder
+
+command:
+
+    mysql -u {username} -p {databasename}<cities.sql
