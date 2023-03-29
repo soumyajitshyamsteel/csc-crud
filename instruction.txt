@@ -1,3 +1,7 @@
+Requirement
+
+php >=8.1
+
 copy .env.example to .env
 
 
